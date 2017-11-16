@@ -17,32 +17,32 @@ action :create do # rubocop:disable Metrics/BlockLength
   end
 
   # Create configuration files
-  file "#{env}/AWS_ACCESS_KEY_ID" do
+  file "#{env}/AWS_ACCESS_KEY_ID" do # ~FC005
+    content aws_access_key_id
     owner 'root'
     group 'root'
     mode '0440'
-    content aws_access_key_id
   end
 
   file "#{env}/AWS_DEFAULT_REGION" do
+    content aws_default_region
     owner 'root'
     group 'root'
     mode '0440'
-    content aws_default_region
   end
 
   file "#{env}/AWS_SECRET_ACCESS_KEY" do
+    content aws_secret_access_key
     owner 'root'
     group 'root'
     mode '0440'
-    content aws_secret_access_key
   end
 
   file "#{env}/OBJECTIVEFS_LICENSE" do
+    content objectivefs_license
     owner 'root'
     group 'root'
     mode '0440'
-    content objectivefs_license
   end
 
   directory mount_point do
