@@ -1,3 +1,10 @@
+#
+# Cookbook:: ofs_mount_test
+# Resource:: mount
+#
+# Copyright:: 2017, Fred Hutchinson Cancer Research Center, All Rights Reserved
+#
+
 ofs_mount 'test' do
   env '/etc/objectivefs.env'
   aws_access_key_id '1234'

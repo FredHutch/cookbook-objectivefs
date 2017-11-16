@@ -1,3 +1,9 @@
+#
+# Cookbook:: objectivefs
+# Resource:: ofs_mount
+#
+# Copyright:: 2017, Fred Hutchinson Cancer Research Center, All Rights Reserved
+#
 resource_name :ofs_mount
 
 property :env, String

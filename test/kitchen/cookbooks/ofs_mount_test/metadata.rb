@@ -1,7 +1,7 @@
 name 'ofs_mount_test'
 maintainer 'Michael Gutteridge'
 maintainer_email 'mrg@fredhutch.org'
-license 'MIT'
+license 'Apache 2.0'
 description 'runs an ofs mount'
 long_description 'Test ofs_mount resource functions'
 version '0.0.1'
