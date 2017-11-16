@@ -2,11 +2,10 @@
 
 # Description
 
-This cookbook adds functionality for using (ObjectiveFS)[https://objectivefs.com/].  ObjectiveFS is:
+This cookbook adds functionality for using [ObjectiveFS](https://objectivefs.com/).  ObjectiveFS is:
 
-> ObjectiveFS is a shared distributed POSIX file system that provides
-> persistent data storage among your cloud instances, laptops, containers and
-> office servers.
+> ... a shared distributed POSIX file system that provides persistent data
+> storage among your cloud instances, laptops, containers and office servers.
 
 This cookbook will install the package and allows creation of ObjectiveFS mount
 points.
@@ -19,7 +18,10 @@ points.
 
 # Use
 
-ObjectiveFS requires a license and download of a package from behind a (login)[https://objectivefs.com/user/downloads].  Thus you must first download and determine another method of distributing this package within your organization.
+The ObjectiveFS requires a license and downloads are behind a
+[login](https://objectivefs.com/user/downloads).  Thus you must first download
+and determine another method of distributing this package within your
+organization.
 
 Package installation in this cookbook (via the `default` recipe) assumes you
 have incorporated the package into a local APT repository and will use `apt` to
