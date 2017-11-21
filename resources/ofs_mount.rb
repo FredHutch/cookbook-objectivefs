@@ -16,50 +16,50 @@ property :mount_point, String
 
 action :create do # rubocop:disable Metrics/BlockLength
   # Create environment directory
-  directory env do
+  directory new_resource.env do
     owner 'root'
     group 'root'
     mode '0640'
   end
 
   # Create configuration files
-  file "#{env}/AWS_ACCESS_KEY_ID" do # ~FC005
-    content aws_access_key_id
+  file "#{new_resource.env}/AWS_ACCESS_KEY_ID" do # ~FC005
+    content new_resource.aws_access_key_id
     owner 'root'
     group 'root'
     mode '0440'
   end
 
-  file "#{env}/AWS_DEFAULT_REGION" do
-    content aws_default_region
+  file "#{new_resource.env}/AWS_DEFAULT_REGION" do
+    content new_resource.aws_default_region
     owner 'root'
     group 'root'
     mode '0440'
   end
 
-  file "#{env}/AWS_SECRET_ACCESS_KEY" do
-    content aws_secret_access_key
+  file "#{new_resource.env}/AWS_SECRET_ACCESS_KEY" do
+    content new_resource.aws_secret_access_key
     owner 'root'
     group 'root'
     mode '0440'
   end
 
-  file "#{env}/OBJECTIVEFS_LICENSE" do
-    content objectivefs_license
+  file "#{new_resource.env}/OBJECTIVEFS_LICENSE" do
+    content new_resource.objectivefs_license
     owner 'root'
     group 'root'
     mode '0440'
   end
 
-  directory mount_point do
+  directory new_resource.mount_point do
     owner 'root'
     group 'root'
   end
 
-  mount mount_point do
-    device bucket_uri
+  mount new_resource.mount_point do
+    device new_resource.bucket_uri
     fstype 'objectivefs'
-    options "auto,_netdev,env=#{env}"
+    options "auto,_netdev,env=#{new_resource.env}"
     action :enable
   end
 end
