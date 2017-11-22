@@ -11,6 +11,10 @@ property :aws_access_key_id, String
 property :aws_default_region, String
 property :aws_secret_access_key, String
 property :objectivefs_license, String
+property :cachesize, String
+property :diskcache_path, String
+property :diskcache_size, String
+property :objectivefs_passphrase, String
 property :bucket_uri, String
 property :mount_point, String
 
@@ -46,6 +50,34 @@ action :create do # rubocop:disable Metrics/BlockLength
 
   file "#{new_resource.env}/OBJECTIVEFS_LICENSE" do
     content new_resource.objectivefs_license
+    owner 'root'
+    group 'root'
+    mode '0440'
+  end
+
+  file "#{new_resource.env}/CACHESIZE" do
+    content new_resource.cachesize
+    owner 'root'
+    group 'root'
+    mode '0440'
+  end
+
+  file "#{new_resource.env}/DISKCACHE_PATH" do
+    content new_resource.diskcache_path
+    owner 'root'
+    group 'root'
+    mode '0440'
+  end
+
+  file "#{new_resource.env}/DISKCACHE_SIZE" do
+    content new_resource.diskcache_size
+    owner 'root'
+    group 'root'
+    mode '0440'
+  end
+
+  file "#{new_resource.env}/OBJECTIVEFS_PASSPHRASE" do
+    content new_resource.objectivefs_passphrase
     owner 'root'
     group 'root'
     mode '0440'
