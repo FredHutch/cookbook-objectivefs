@@ -11,6 +11,10 @@ ofs_mount 'test' do
   aws_default_region 'us-west'
   aws_secret_access_key 'abcdefg'
   objectivefs_license 'letmein'
+  objectivefs_passphrase 'itsasecret'
+  diskcache_path '/var/cache/objectivefs'
+  diskcache_size '100G:2G'
+  cachesize '5G'
   bucket_uri 's3://foo/bar'
   mount_point '/mnt/ofs_mount_test'
   action :create
